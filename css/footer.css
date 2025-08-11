@@ -1,0 +1,195 @@
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+/* JoyMart footer */
+footer {
+    width: 100%;
+    background-color: #4A56E2;
+    color: white;
+    font-size: 14px;
+}
+
+/* Back to top button */
+#back-to-top {
+    background-color: #6a11cb;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+}
+
+#back-to-top a {
+    color: white;
+    text-decoration: none;
+}
+
+#back-to-top:hover {
+    background-color: #7d27e0;
+}
+
+/* Main footer content */
+#footer-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #DDD;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer secondary section */
+#footer-secondary {
+    background-color: #4A56E2;
+    border-top: 1px solid #6a68e7;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-logo {
+    margin-right: 50px;
+}
+
+#footer-shopName {
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#footer-shopName b {
+    font-weight: bold;
+}
+
+.nav-logo-suffix {
+    font-size: 14px;
+}
+
+#footer-logo a {
+    text-decoration: none;
+    color: white;
+}
+
+#footer-language {
+    display: flex;
+}
+
+.footer-option {
+    border: 1px solid #848688;
+    border-radius: 3px;
+    padding: 6px 18px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.footer-option i {
+    margin: 0 5px;
+}
+
+/* Footer bottom */
+#footer-bottom {
+    background-color: #2b3190;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+#footer-bottom-links {
+    margin-bottom: 10px;
+}
+
+#footer-bottom-links a {
+    color: #DDD;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#footer-bottom-links a:hover {
+    text-decoration: underline;
+}
+
+#footer-copyright {
+    color: #999;
+}
+
+/* Media queries */
+@media (max-width: 992px) {
+    #footer-content {
+        flex-wrap: wrap;
+        padding: 30px 20px;
+    }
+
+    .footer-column {
+        flex-basis: 50%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #footer-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .footer-column {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+
+    #footer-secondary {
+        flex-direction: column;
+    }
+
+    #footer-logo {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-section h3 {
+        font-size: 14px;
+    }
+
+    .footer-section ul li a {
+        font-size: 12px;
+    }
+
+    #footer-bottom-links a {
+        display: block;
+        margin: 10px 0;
+    }
+}
