@@ -56,7 +56,7 @@ A fully responsive e-commerce website built with HTML, CSS, and JavaScript. With
    └── orderPlaced.js          # Order confirmation functionality
    ```
 
-3. **Facebook Pixel Setup**
+3. **Facebook Pixel Setup** #TODO
    - The website needs to be configured with Facebook Pixel for event tracking.
      - Create a Facebook Pixel in your Facebook Business Manager
      - Integrated the Facebook Pixel code into the website's multiple pages to track user interactions across standard events for e-commerce websites.
