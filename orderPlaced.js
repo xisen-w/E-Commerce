@@ -25,6 +25,23 @@ const cartItems = getCartItems();
 // Calculate order amount from cart items
 const orderAmount = cartItems.reduce((total, item) => total + (Number(item.price) * item.quantity), 0) || 200; // Default to 200 if calculation fails
 
+// Track Purchase event for Meta Pixel
+if (typeof fbq !== 'undefined' && cartItems.length > 0) {
+    const contentIds = cartItems.map(item => item.id);
+    const contents = cartItems.map(item => ({
+        id: item.id,
+        quantity: item.quantity
+    }));
+
+    fbq('track', 'Purchase', {
+        content_ids: contentIds,
+        content_type: 'product',
+        contents: contents,
+        value: orderAmount,
+        currency: 'USD',
+        num_items: cartItems.reduce((total, item) => total + item.quantity, 0)
+    });
+}
 
 // Clear cookies after tracking the purchase
 const expiryDate = new Date();

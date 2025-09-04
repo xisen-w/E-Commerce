@@ -169,6 +169,18 @@ function dynamicClothingSection(ob) {
       document.getElementById("badge").innerHTML = counter;
     }
 
+    // Track AddToCart event for Meta Pixel
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'AddToCart', {
+            content_ids: [ob.id],
+            content_name: ob.title,
+            content_category: ob.category,
+            content_type: 'product',
+            value: ob.price,
+            currency: 'USD'
+        });
+    }
+
     // Show confirmation message
     const confirmationMsg = document.createElement('div');
     confirmationMsg.style.position = 'fixed';

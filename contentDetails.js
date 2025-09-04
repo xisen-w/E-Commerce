@@ -128,6 +128,7 @@ function dynamicContentDetails(ob)
         // Improved cart handling with better cookie structure
         let cartItems = [];
         let counter = 0;
+        // alert('Added to cart!!');
 
         // Check if cart cookie exists
         if(document.cookie.indexOf('cart=') >= 0) {
@@ -176,6 +177,18 @@ function dynamicContentDetails(ob)
         // Update badge
         document.getElementById("badge").innerHTML = counter;
 
+        // Track AddToCart event for Meta Pixel
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'AddToCart', {
+                content_ids: [id],
+                content_name: ob.title,
+                content_category: ob.category,
+                content_type: 'product',
+                value: ob.price,
+                currency: 'USD'
+            });
+        }
+
         // Show confirmation message
         const confirmationMsg = document.createElement('div');
         confirmationMsg.style.position = 'fixed';
@@ -199,6 +212,8 @@ function dynamicContentDetails(ob)
                 document.body.removeChild(confirmationMsg);
             }, 500);
         }, 2000);
+    }
+
     // Add "Buy Now" button (JoyMart style)
     let buyNowDiv = document.createElement('div')
     buyNowDiv.id = 'buyNow'
@@ -251,6 +266,19 @@ httpRequest.onreadystatechange = function()
             let contentDetails = JSON.parse(this.responseText)
             {
                 console.log(contentDetails);
+
+                // Track ViewContent event for Meta Pixel
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'ViewContent', {
+                        content_ids: [id],
+                        content_name: contentDetails.title,
+                        content_category: contentDetails.category,
+                        content_type: 'product',
+                        value: contentDetails.price,
+                        currency: 'USD'
+                    });
+                }
+
                 dynamicContentDetails(contentDetails);
             }
         }
